@@ -9,12 +9,12 @@
 
 Pod::Spec.new do |s|
   s.name             = "PLMediaStreamingKit"
-  s.version          = "2.1.6"
+  s.version          = "2.1.6.1"
   s.summary          = "Pili iOS media streaming framework via RTMP."
   s.homepage         = "https://github.com/pili-engineering/PLMediaStreamingKit"
   s.license          = 'Apache License, Version 2.0'
   s.author           = { "pili" => "pili@qiniu.com" }
-  s.source           = { :git => "https://github.com/pili-engineering/PLMediaStreamingKit.git", :tag => "v#{s.version}" }
+  s.source           = { :git => "https://github.com/cielpy/PLMediaStreamingKit.git", :tag => "v#{s.version}" }
 
   s.platform     = :ios
   s.ios.deployment_target = '7.0'
