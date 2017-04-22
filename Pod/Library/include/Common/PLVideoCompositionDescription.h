@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface PLVideoCompositionDescription : NSObject
+@interface PLVideoCompositionDescription : NSObject <NSCopying>
 
 /**
  @brief 当被裁剪的部分比例与在新图中需要安放的位置的比例不同时选择的填充模式

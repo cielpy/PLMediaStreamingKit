@@ -11,6 +11,7 @@
 #import <CoreVideo/CoreVideo.h>
 #import "PLVideoCompositionDescription.h"
 #import "PLPixelBuffer.h"
+#import "PLRGBtoI420Processor.h"
 
 /*!
  @protocol   PLPixelBufferProcessProtocol
@@ -52,6 +53,8 @@
  @warning 当传入的 sourceBuffers 的 count 与 videoCompositionDescriptions 的 count 不同时会直接抛错，请确保 videoCompositionDescriptions 的数量与 sourceBuffers 的数量始终一致
  */
 - (CVPixelBufferRef)processSourceBuffers:(NSArray<PLPixelBuffer *> *)sourceBuffers;
+
+- (PLI420PixelBufferRef)processI420SourceBuffers:(NSArray<PLPixelBuffer *> *)sourceBuffers;
 
 @end
 

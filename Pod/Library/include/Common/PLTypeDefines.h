@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
+
 #pragma mark - Stream State
 
 
@@ -343,6 +344,25 @@ typedef NS_ENUM(NSUInteger, PLH264EncoderType) {
     PLH264EncoderType_VideoToolbox     // iOS 8 及以上系统版本可用 VideoToolbox 编码器，编码效率更优
 };
 
+/**
+ @brief 音频编码模式
+ */
+typedef NS_ENUM(NSUInteger, PLAACEncoderType) {
+    /**
+     @brief iOS AAC（硬编）
+     */
+    PLAACEncoderType_iOS_AAC,
+    /**
+     @brief fdk-aac AAC
+     */
+    PLAACEncoderType_fdk_AAC_LC,
+    /**
+     @brief fdk-aac HE-AAC
+     */
+    PLAACEncoderType_fdk_AAC__HE_BSR
+    
+};
+
 #pragma mark - Audio SampleRate
 
 /*!
@@ -437,7 +457,8 @@ typedef NS_ENUM(NSUInteger, PLRTCVideoSizePreset) {
     PLRTCVideoSizePreset544x720,        //4:3
     PLRTCVideoSizePreset544x960,        //16:9
     PLRTCVideoSizePreset720x960,        //4:3
-    PLRTCVideoSizePreset720x1280        //16:9
+    PLRTCVideoSizePreset720x1280,       //16:9
+    PLRTCVideoSizePreset144x192         //4:3
 };
 
 ///连麦类型
@@ -445,6 +466,12 @@ typedef NS_OPTIONS(NSUInteger, PLRTCConferenceType) {
     PLRTCConferenceTypeAudio = 0,
     PLRTCConferenceTypeVideo,
     PLRTCConferenceTypeAudioAndVideo
+};
+
+///连麦视频格式
+typedef NS_OPTIONS(NSUInteger, PLRTCVideoFormat) {
+    PLRTCVideoFormatNV12 = 0,
+    PLRTCVideoFormatI420 = 1
 };
 
 /// 断线后是否自动重新加入房间，默认为 YES
